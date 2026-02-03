@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUJI 浮磁 | Motion Elevated</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fuji: {
+                            cobalt: '#1A2B48',   // Primary Text / Buttons
+                            silver: '#E2E8F0',   // Card Backgrounds
+                            cyan: '#43b9c1',     // Main Background
+                            lilac: '#8063e8',    // Secondary Accent
+                            obsidian: '#0F172A', // Deep Contrast
+                            white: '#FFFFFF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Rajdhani', 'sans-serif'],
+                        display: ['Exo 2', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        // Hero: Cyan Gradient
+                        'hero-pattern': "linear-gradient(to bottom, rgba(67, 185, 193, 0.8), rgba(67, 185, 193, 0.95)), url('http://googleusercontent.com/image_collection/image_retrieval/609925330434828802')", 
+                        
+                        // Tech: Dark Cobalt for contrast
+                        'tech-pattern': "linear-gradient(to right, rgba(26, 43, 72, 0.95), rgba(15, 23, 42, 0.95)), url('http://googleusercontent.com/image_collection/image_retrieval/2972939007696796082')",
+                        
+                        // Contact: Cobalt Gradient
+                        'contact-pattern': "linear-gradient(to top, rgba(26, 43, 72, 0.95), rgba(67, 185, 193, 0.4)), url('http://googleusercontent.com/image_collection/image_retrieval/14238038399051233610')"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glow-text {
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+        }
+        .glow-dark {
+            text-shadow: 0 0 30px rgba(26, 43, 72, 0.4);
+        }
+        .nav-scrolled {
+            background-color: rgba(67, 185, 193, 0.95); /* Cyan */
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(26, 43, 72, 0.2);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #E2E8F0; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1A2B48; /* Cobalt */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8063e8; /* Lilac */
+        }
+    </style>
+</head>
+<body class="bg-fuji-cyan text-fuji-cobalt font-sans antialiased selection:bg-fuji-cobalt selection:text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 px-6 lg:px-12 border-b border-transparent">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            
+            <!-- BRAND LOGO AREA -->
+            <a href="#" class="flex items-center gap-4 group">
+                <img src="Fuji Logo Blue.png" alt="FUJI Logo" class="h-12 w-12 rounded-lg border-2 border-fuji-cobalt/20 object-cover shadow-lg group-hover:border-fuji-lilac transition-all duration-300">
+                
+                <div class="text-3xl font-display font-bold text-fuji-cobalt tracking-widest uppercase">
+                    Fuji <span class="text-white text-2xl group-hover:text-fuji-lilac transition-colors duration-300">浮磁</span>
+                </div>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#vision" class="text-fuji-cobalt hover:text-white transition-colors uppercase tracking-wider text-sm font-bold">Vision</a>
+                <a href="#technology" class="text-fuji-cobalt hover:text-white transition-colors uppercase tracking-wider text-sm font-bold">Tech</a>
+                <a href="#markets" class="text-fuji-cobalt hover:text-white transition-colors uppercase tracking-wider text-sm font-bold">Markets</a>
+                <a href="#team" class="text-fuji-cobalt hover:text-white transition-colors uppercase tracking-wider text-sm font-bold">Team</a>
+                <a href="#contact" class="px-5 py-2 border-2 border-fuji-cobalt text-fuji-cobalt hover:bg-fuji-cobalt hover:text-white transition-all duration-300 rounded font-bold uppercase text-sm tracking-wide shadow-md">
+                    Contact Us
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-fuji-cobalt" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-fuji-cyan border-b border-fuji-cobalt/20 md:hidden flex flex-col p-6 space-y-4 shadow-2xl">
+            <a href="#vision" class="text-fuji-cobalt hover:text-white">Vision</a>
+            <a href="#technology" class="text-fuji-cobalt hover:text-white">Technology</a>
+            <a href="#markets" class="text-fuji-cobalt hover:text-white">Markets</a>
+            <a href="#team" class="text-fuji-cobalt hover:text-white">Team</a>
+            <a href="#contact" class="text-fuji-cobalt font-bold">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed">
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div class="inline-block px-4 py-1 mb-6 border-2 border-fuji-cobalt/20 rounded-full bg-white/20 backdrop-blur-sm">
+                <span class="text-fuji-cobalt font-bold tracking-wider uppercase text-sm">The Future of Short-Haul Transit</span>
+            </div>
+            <h1 class="text-6xl md:text-8xl font-display font-bold text-fuji-cobalt mb-6 uppercase tracking-tight leading-none glow-text drop-shadow-xl">
+                Motion <br /> <span class="text-white">Elevated</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-fuji-cobalt/80 max-w-2xl mx-auto mb-10 font-medium">
+                Silent. Frictionless. Affordable. Bridging the gap between high-cost rail and inefficient roads.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#vision" class="px-8 py-4 bg-fuji-cobalt text-white font-bold text-lg rounded hover:bg-fuji-lilac transition-all duration-300 uppercase tracking-widest shadow-lg hover:shadow-xl">
+                    Explore The Vision
+                </a>
+                <a href="#technology" class="px-8 py-4 border-2 border-fuji-cobalt/30 bg-white/30 backdrop-blur-sm text-fuji-cobalt font-bold text-lg rounded hover:bg-white/60 transition-colors duration-300 uppercase tracking-widest">
+                    View Technology
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-fuji-cobalt">
+            <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- The Problem (Vision) -->
+    <section id="vision" class="py-24 bg-fuji-cyan relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-fuji-cobalt mb-4">The Transit Gap</h2>
+                <div class="h-1 w-24 bg-fuji-cobalt mx-auto rounded-full"></div>
+                <p class="mt-4 text-fuji-cobalt/80 text-lg max-w-2xl mx-auto font-medium">Current infrastructure is either too expensive or too inefficient. We fix the "Last Mile" disconnect.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white/80 backdrop-blur-sm p-8 rounded-xl border border-white hover:border-fuji-cobalt transition-all duration-300 hover:-translate-y-2 group shadow-xl">
+                    <div class="w-16 h-16 bg-fuji-cyan/20 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-coins text-3xl text-fuji-cobalt group-hover:text-fuji-lilac transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-fuji-cobalt mb-3 font-display">Prohibitive CAPEX</h3>
+                    <p class="text-fuji-cobalt/70 leading-relaxed font-medium">Traditional monorails cost $50M - $150M per mile. This concrete-heavy infrastructure prices out most private developments.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white/80 backdrop-blur-sm p-8 rounded-xl border border-white hover:border-fuji-cobalt transition-all duration-300 hover:-translate-y-2 group shadow-xl">
+                    <div class="w-16 h-16 bg-fuji-cyan/20 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-link-slash text-3xl text-fuji-cobalt group-hover:text-fuji-lilac transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-fuji-cobalt mb-3 font-display">The Disconnect</h3>
+                    <p class="text-fuji-cobalt/70 leading-relaxed font-medium">Fixed-track systems are rigid. Trains cannot leave rails to deliver VIPs to lobbies or pallets to warehouses.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white/80 backdrop-blur-sm p-8 rounded-xl border border-white hover:border-fuji-cobalt transition-all duration-300 hover:-translate-y-2 group shadow-xl">
+                    <div class="w-16 h-16 bg-fuji-cyan/20 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-road text-3xl text-fuji-cobalt group-hover:text-fuji-lilac transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-fuji-cobalt mb-3 font-display">Friction & Pollution</h3>
+                    <p class="text-fuji-cobalt/70 leading-relaxed font-medium">Standard vehicles suffer from tire degradation and create particulate pollution—a critical failure point for clean rooms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section (Dark for contrast) -->
+    <section id="technology" class="py-24 bg-tech-pattern bg-cover bg-fixed relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h4 class="text-fuji-cyan font-bold tracking-widest uppercase mb-2 glow-lilac">Dual-Mode Infrastructure</h4>
+                    <h2 class="text-4xl md:text-6xl font-display font-bold text-white mb-6">Passive Maglev <br>Technology</h2>
+                    <p class="text-xl text-fuji-silver mb-6 font-light leading-relaxed">
+                        We reduce infrastructure costs by over <strong class="text-fuji-cyan">90%</strong> by moving the active technology from the track to the vehicle.
+                    </p>
+                    <p class="text-fuji-silver/80 mb-8 leading-relaxed">
+                        Our proprietary system enables standard electric vehicles to levitate on unpowered aluminum rails, delivering a silent, high-speed connection for just <strong>$4.5 million per mile</strong>.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-fuji-cyan mt-1 mr-4"></i>
+                            <div>
+                                <h5 class="text-white font-bold text-lg">HTS Maglev Core</h5>
+                                <p class="text-sm text-fuji-silver/70">Self-stabilizing levitation without complex active controls.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-fuji-cyan mt-1 mr-4"></i>
+                            <div>
+                                <h5 class="text-white font-bold text-lg">"Maglev Ready" Retrofit</h5>
+                                <p class="text-sm text-fuji-silver/70">Upgrades standard EV chassis with Halbach Magnetic Wheels.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Chart Visual -->
+                <div class="bg-fuji-cobalt/80 backdrop-blur-md p-8 rounded-2xl border border-fuji-cyan/30 shadow-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-8 border-b border-white/10 pb-4">Cost Per Mile Comparison</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between text-sm text-fuji-silver/70 mb-2">
+                                <span>Airport Monorail</span>
+                                <span>$100M+</span>
+                            </div>
+                            <div class="h-10 bg-fuji-obsidian rounded-full overflow-hidden relative">
+                                <div class="absolute top-0 left-0 h-full bg-slate-600 w-full flex items-center justify-end px-4 text-white font-bold text-sm"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm text-fuji-silver/70 mb-2">
+                                <span>Light Rail</span>
+                                <span>$60M</span>
+                            </div>
+                            <div class="h-10 bg-fuji-obsidian rounded-full overflow-hidden relative">
+                                <div class="absolute top-0 left-0 h-full bg-slate-500 w-[60%] flex items-center justify-end px-4 text-white font-bold text-sm"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm text-white font-bold mb-2">
+                                <span class="text-fuji-cyan">FUJI System</span>
+                                <span class="text-fuji-cyan">$4.5M</span>
+                            </div>
+                            <div class="h-12 bg-fuji-obsidian rounded-full overflow-hidden relative border-2 border-fuji-cyan shadow-[0_0_20px_rgba(67,185,193,0.3)]">
+                                <div class="absolute top-0 left-0 h-full bg-gradient-to-r from-fuji-lilac to-fuji-cyan w-[8%] flex items-center justify-end px-4 text-fuji-obsidian font-bold text-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Markets -->
+    <section id="markets" class="py-24 bg-fuji-cyan">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-display font-bold text-fuji-cobalt mb-4">Target Deployments</h2>
+                <p class="text-fuji-cobalt/80 font-medium">Where FUJI is revolutionizing logistics and transit.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Market 1 -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 cursor-pointer border-4 border-white hover:border-fuji-cobalt transition-all duration-300 shadow-xl">
+                    <img src="https://media.craiyon.com/2025-08-12/hqZx1kkPREeDUOd9lyTEHQ.webp" alt="Smart City" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-fuji-cobalt via-fuji-cobalt/60 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <div class="h-1 w-12 bg-fuji-cyan mb-4 transition-all duration-300 group-hover:w-24 group-hover:bg-white"></div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Smart Cities</h3>
+                        <p class="text-sm text-fuji-silver opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Woven communities seeking zero-emission, futuristic mobility.</p>
+                    </div>
+                </div>
+
+                <!-- Market 2 -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 cursor-pointer border-4 border-white hover:border-fuji-cobalt transition-all duration-300 shadow-xl">
+                    <img src="https://i.redd.it/i-have-been-creating-a-modern-monorail-station-with-some-v0-q7lf8r7d3ncc1.png?width=1918&format=png&auto=webp&s=705b124a7410f275a5f57d534da80098514a9ef0" alt="Resorts" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-fuji-cobalt via-fuji-cobalt/60 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <div class="h-1 w-12 bg-fuji-cyan mb-4 transition-all duration-300 group-hover:w-24 group-hover:bg-white"></div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Premium Resorts</h3>
+                        <p class="text-sm text-fuji-silver opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Immersive, silent transport for theme parks and luxury hotels.</p>
+                    </div>
+                </div>
+
+                <!-- Market 3 -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 cursor-pointer border-4 border-white hover:border-fuji-cobalt transition-all duration-300 shadow-xl">
+                    <img src="https://www.fabmatics.com/files/2019/08/roller-conveyor-with-turntables-and-lifts-for-wafer-transport-1024x753.jpg" alt="Industrial" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-fuji-cobalt via-fuji-cobalt/60 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <div class="h-1 w-12 bg-fuji-cyan mb-4 transition-all duration-300 group-hover:w-24 group-hover:bg-white"></div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Industrial Hubs</h3>
+                        <p class="text-sm text-fuji-silver opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Dust-free, vibration-free transport for semiconductor fabs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section (GALLERY VIEW) -->
+    <section id="team" class="py-24 bg-white/20 backdrop-blur-sm border-t border-fuji-cobalt/10">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-display font-bold text-fuji-cobalt mb-4">World-Class Leadership</h2>
+                <p class="text-fuji-cobalt/80 max-w-2xl mx-auto font-medium">Our team combines NASA engineering, PhD-level economics, and international relations expertise.</p>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Prof Deng (Advisor) -->
+                 <div class="bg-white p-6 rounded-xl border border-white hover:border-fuji-cobalt transition-all duration-300 shadow-lg group">
+                    <img src="deng zigang.png" alt="Prof Deng" class="w-24 h-24 rounded-full border-2 border-fuji-cobalt/20 object-cover mb-4 group-hover:border-fuji-lilac transition-all">
+                    <h4 class="text-xl font-bold text-fuji-cobalt">Prof. Dr. Andy Deng</h4>
+                    <p class="text-fuji-lilac font-bold text-sm mb-1">HTS Maglev Pioneer</p>
+                    <p class="text-xs text-fuji-cobalt/60 font-semibold">190+ Papers, 90+ Patents</p>
+                </div>
+
+                <!-- Owen -->
+                <div class="bg-white p-6 rounded-xl border border-white hover:border-fuji-cobalt transition-all duration-300 shadow-lg hover:-translate-y-1 group">
+                     <img src="owenluo.png" alt="Owen Luo" class="w-24 h-24 rounded-full border-2 border-fuji-cobalt/20 object-cover mb-4 group-hover:border-fuji-lilac transition-colors">
+                     <h4 class="text-xl font-bold text-fuji-cobalt">Owen Luo</h4>
+                     <p class="text-fuji-cobalt/80 text-sm mb-1 font-semibold">Information Science</p>
+                     <p class="text-xs text-slate-500">Cornell, Ex-NASA</p>
+                </div>
+
+                <!-- Tiana -->
+                <div class="bg-white p-6 rounded-xl border border-white hover:border-fuji-cobalt transition-all duration-300 shadow-lg hover:-translate-y-1 group">
+                     <img src="tianransongbusiness.JPG" alt="Tiana Song" class="w-24 h-24 rounded-full border-2 border-fuji-cobalt/20 object-cover mb-4 group-hover:border-fuji-lilac transition-colors">
+                     <h4 class="text-xl font-bold text-fuji-cobalt">Tiana Song</h4>
+                     <p class="text-fuji-cobalt/80 text-sm mb-1 font-semibold">CS MEng</p>
+                     <p class="text-xs text-slate-500">Cornell, Ex-Apollo</p>
+                </div>
+
+                <!-- Ellie -->
+                <div class="bg-white p-6 rounded-xl border border-white hover:border-fuji-cobalt transition-all duration-300 shadow-lg hover:-translate-y-1 group">
+                     <img src="elliezhang.png" alt="Ellie Zhang" class="w-24 h-24 rounded-full border-2 border-fuji-cobalt/20 object-cover mb-4 group-hover:border-fuji-lilac transition-colors">
+                     <h4 class="text-xl font-bold text-fuji-cobalt">Ellie Zhang</h4>
+                     <p class="text-fuji-cobalt/80 text-sm mb-1 font-semibold">International Relations</p>
+                     <p class="text-xs text-slate-500">Georgetown</p>
+                </div>
+
+                <!-- Ziyi -->
+                <div class="bg-white p-6 rounded-xl border border-white hover:border-fuji-cobalt transition-all duration-300 shadow-lg hover:-translate-y-1 group">
+                     <img src="Ziyi Lin.jpg" alt="Ziyi Lin" class="w-24 h-24 rounded-full border-2 border-fuji-cobalt/20 object-cover mb-4 group-hover:border-fuji-lilac transition-colors">
+                     <h4 class="text-xl font-bold text-fuji-cobalt">Ziyi Lin</h4>
+                     <p class="text-fuji-cobalt/80 text-sm mb-1 font-semibold">Applied Econ PhD</p>
+                     <p class="text-xs text-slate-500">Cornell University</p>
+                </div>
+
+                <!-- Xinyu -->
+                <div class="bg-white p-6 rounded-xl border border-white hover:border-fuji-cobalt transition-all duration-300 shadow-lg hover:-translate-y-1 group">
+                     <img src="xinyu dou.jpg" alt="Xinyu Dou" class="w-24 h-24 rounded-full border-2 border-fuji-cobalt/20 object-cover mb-4 group-hover:border-fuji-lilac transition-colors">
+                     <h4 class="text-xl font-bold text-fuji-cobalt">Xinyu Dou</h4>
+                     <p class="text-fuji-cobalt/80 text-sm mb-1 font-semibold">Energy Postdoc</p>
+                     <p class="text-xs text-slate-500">Stanford, Tsinghua</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-contact-pattern bg-cover bg-center text-white pt-24 pb-12 border-t border-fuji-cobalt">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl md:text-7xl font-display font-bold mb-8 uppercase tracking-tighter glow-text">Join the Revolution</h2>
+            <p class="text-xl text-fuji-silver/80 mb-12 max-w-xl mx-auto">We are redefining the future of motion. Contact us for partnership opportunities.</p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-8 mb-16">
+                <a href="mailto:contact@fuji-maglev.com" class="flex items-center justify-center gap-3 text-lg font-bold bg-fuji-cyan text-fuji-cobalt px-8 py-4 rounded hover:bg-white transition-all duration-300 shadow-lg">
+                    <i class="fa-solid fa-envelope"></i> contact@fuji-maglev.com
+                </a>
+                <a href="#" class="flex items-center justify-center gap-3 text-lg font-bold border-2 border-white px-8 py-4 rounded hover:bg-white hover:text-fuji-cobalt transition-colors">
+                    <i class="fa-solid fa-globe"></i> www.fuji-maglev.com
+                </a>
+            </div>
+
+            <div class="border-t border-fuji-silver/10 pt-8 flex flex-col md:flex-row justify-between items-center text-fuji-silver/60 text-sm">
+                <p>&copy; 2026 FUJI 浮磁. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-fuji-cyan transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                    <a href="#" class="hover:text-fuji-cyan transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                    <a href="#" class="hover:text-fuji-cyan transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>
